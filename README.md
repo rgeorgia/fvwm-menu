@@ -1,0 +1,69 @@
+# fvwm menu maker
+
+---
+
+## Steps, Path, Roadmap
+
+- Check local applications directory. `$HOME/.local/share/applicatons`
+  - Require desktop files to be copied here.
+- Get all the files that have a .desktop extension
+- Read each file
+- Parse each file for specific properties
+- Create a menu item based on the applications category
+- Write to menu file
+
+---
+
+## Notes
+
+### Application Directory
+
+- get location of applications directory
+  - NetBSD - `/usr/pkg/share/applications`
+  - Almost everyone else - `/usr/local/share/applications/`
+  - Verify with [XDG specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
+- **Verify path** exists
+  - Check all locations based on XDG env variables and XDG spec
+  - Check local paths
+- List application directory
+  - get all files with .desktop extension
+
+### Read desktop files
+
+- Cycle through file list and read each file
+- Parse out all required (needed) data
+  - Type
+  - Category
+  - Name
+  - Exec
+  - Terminal (bool)
+
+### Create Menu
+
+- generate structs
+- organize by category
+- Print meun based on fvwm spec
+
+---
+
+## Percolate
+
+- Read and parse each file concurrently or in parallel
+- Create xdgmenu in .fvwm directory
+
+## XDG ENV settings
+
+Taken from ArcoLinux - fvwm3 desktop
+
+```bash
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+XDG_SEAT=seat0
+XDG_SESSION_DESKTOP=
+XDG_SESSION_TYPE=x11
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+XDG_SESSION_CLASS=user
+XDG_VTNR=2
+XDG_SESSION_ID=2
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_DATA_DIRS=/home/rgeorgia/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+```
