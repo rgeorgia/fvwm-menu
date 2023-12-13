@@ -4,13 +4,13 @@
 
 ## Steps, Path, Roadmap
 
-- Check local applications directory. `$HOME/.local/share/applicatons`
-  - Require desktop files to be copied here.
-- Get all the files that have a .desktop extension
-- Read each file
-- Parse each file for specific properties
-- Create a menu item based on the applications category
-- Write to menu file
+- [ ] Check local applications directory. `$HOME/.local/share/applicatons`
+  - [ ] Require desktop files to be copied here.
+- [ ] Get all the files that have a .desktop extension
+- [ ] Read each file
+- [ ] Parse each file for specific properties
+- [ ] Create a menu item based on the applications category
+- [ ] Write to menu file
 
 ---
 
