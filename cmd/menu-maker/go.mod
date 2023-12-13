@@ -1,3 +1,3 @@
-module github.com/rgeorgia/fvwm-menu/make-menu
+module fvwm-menu/menu-maker
 
 go 1.21.4
